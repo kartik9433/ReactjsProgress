@@ -1,19 +1,14 @@
 import React from 'react'
-// import Blog,{TimeTable, userkey} from './Blog'
-import  {User} from './User'
 
 function App() {
+  // const demo  = ()=>{
+  //    alert("don't click on it")
+  // };
   return (
     <div>
-        <User/>
-        <Navbar/>
+         <h1>hello</h1>
+        <button onClick={()=>alert("don't click on it")}>click on me!</button>
     </div>
-  )
-}
-
-function Navbar(){
-  return (
-    <h2>Navbar</h2>
   )
 }
 

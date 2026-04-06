@@ -1,13 +1,22 @@
-import React, { Component } from 'react'
-import UserList from './UserList'
+import React, { useState } from 'react'
 
-export default class App extends Component {
+function App() {
 
-  render() {
-    return (
-      <div>
-          <UserList name="kartik"/>
-      </div>
-    )
-  }
+   const [data,setData]  = useState();
+   const[inputValueShow,inputSetValueHide] = useState(false);
+
+   const  handleChange =(event)=>{
+       console.log(event.target.value);
+       setData(event.target.value);
+       inputSetValueHide(false);
+    }
+  return (
+    <div>
+          <h1 >{inputValueShow ? data : ''}</h1>
+        <input type="text" onChange={handleChange}/>
+        <button onClick={()=>inputSetValueHide(true)}>click !</button>
+    </div>
+  )
 }
+
+export default App

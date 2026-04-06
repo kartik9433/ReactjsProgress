@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function App() {
-  // const demo  = ()=>{
-  //    alert("don't click on it")
-  // };
-  return (
-    <div>
-         <h1>hello</h1>
-        <button onClick={()=>alert("don't click on it")}>click on me!</button>
-    </div>
-  )
+class App extends Component {
+      constructor(){
+         super();
+         this.state ={
+            data:"hello sir",
+         };
+      }
+       demo(){
+         this.setState({
+            data:"kartik"
+         });
+      }
+   render(){
+       return (
+             <>
+              <h1>{this.state.data}</h1>
+              <button onClick={()=>this.demo()}>click !</button>
+             </>
+        )
+   }
 }
 
 export default App

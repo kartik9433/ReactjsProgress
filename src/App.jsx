@@ -1,13 +1,20 @@
-import React from 'react'
-import Form from './Form'
+import React, { Component } from 'react'
 
-function App() {
-  return (
-    <div>
-      <h1>Form Handling</h1>
-      <Form/>
-    </div>
-  )
+export default class App extends Component {
+  constructor(){
+    super();
+    console.log("constructor");
+  }
+   componentDidMount(){
+    console.log("component did Mount");
+   }
+   
+  render() {
+          console.log("main method");
+    return (
+      <div className="container">
+         <h1>LifeCycleMethodComponetDidUpdate</h1>
+      </div>
+    )
+  }
 }
-
-export default App

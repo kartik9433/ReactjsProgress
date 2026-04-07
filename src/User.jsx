@@ -1,9 +1,11 @@
-import React,{Component} from "react"
+import React from 'react'
 
-export class User extends Component{
-     render(){
-        return (<h1>
-             hello
-        </h1>)
-     }
+function User(props) {
+  return (
+    <div>
+        <button onClick={props.handleChange}>click</button>
+    </div>
+  )
 }
+
+export default User

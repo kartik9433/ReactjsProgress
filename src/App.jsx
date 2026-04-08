@@ -1,28 +1,40 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Table from 'react-bootstrap/Table';
 
-export default class App extends Component {
-  constructor(){
-       super();
-    this.state = {
-       name:"Hello Sir",
-       count:0
-    };
-    console.log("constructor");
-  }
-   componentDidUpdate(){
-    console.log("component did Mount");
-   }
-   
-  render() {
-          console.log("main method");
-    return (
-      <div className="container">
-         <h1>LifeCycleMethodComponetDidUpdate</h1>
-         <h1>count:{this.state.count}</h1>
-         <button onClick={()=>this.setState({count:this.state.count+1})}>count</button>
-         <h2>{this.state.name}</h2>
-         <button onClick={()=>this.setState({name :"kartik"})}>Click</button>
-      </div>
-    )
-  }
+
+function App() {
+  const tableData  = [
+    {id:1,name:"xyz",age:40,location:"Time Square"},
+    {id:2,name:"yyy",age:50,location:"Time Square"},
+    {id:3,name:"kmf",age:35,location:"Time Square"},
+    {id:4,name:"xdfz",age:70,location:"Time Square"}
+  ];
+  return (
+    <div>
+      <h1>Table</h1>
+        <Table>
+            <thead>
+                 <tr>
+                     <th>Id</th>
+                     <th>Name</th>
+                     <th>Age</th>
+                     <th>Location</th>
+                 </tr>
+            </thead>
+           <tbody>
+               {tableData.map((data,idx)=>(
+                  <tr key={idx}>
+                       <th>{data.id}</th>
+                       <th>{data.name}</th>
+                       <th>{data.age}</th>
+                       <th>{data.location}</th>
+                  </tr>
+               ))}
+           </tbody>
+        </Table>
+        
+    </div>
+  )
 }
+
+export default App
